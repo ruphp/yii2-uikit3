@@ -1,7 +1,5 @@
 # yii2-uikit3 extensions for Yii2
-
 Widgets & assets for a lightweight and modular front-end framework [UiKit](http://getuikit.com/) 
-
 
 Installation of Yii2 Uikit3 Extension
 ------------------------------------

@@ -12,6 +12,7 @@
         {
             "name": "Aleksandr Smirnov",
             "homepage" : "https://github.com/ruphp"
+			
         }
 	],
 	"require": {

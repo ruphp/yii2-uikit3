@@ -1,7 +1,7 @@
 {
 	"name": "ruphp/yii2-uikit3",
 	"description": "Uikit 3 for Yii2",
-	"keywords": ["yii2", "uikit", "widgets"],
+	"keywords": ["yii2", "uikit3", "widgets"],
 	"type": "yii2-extension",
 	"license": "MIT",
 	"support": {

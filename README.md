@@ -14,7 +14,7 @@ php composer.phar require --prefer-dist ruphp/yii2-uikit3
 or add
 
 ```
-"ruphp/yii2-uikit3:*"
+composer require "ruphp/yii2-uikit3:*"
 ```
 to the require section of your `composer.json` file.
 

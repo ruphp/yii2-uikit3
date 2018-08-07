@@ -12,13 +12,12 @@
         {
             "name": "Aleksandr Smirnov",
             "homepage" : "https://github.com/ruphp"
-			
+
         }
 	],
 	"require": {
         "yiisoft/yii2": ">=2.0.6"
     },
-	"prefer-stable": true,
 	"minimum-stability": "dev",
 	"autoload": {
 		"psr-4": {

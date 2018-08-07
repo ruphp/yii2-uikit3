@@ -1,0 +1,25 @@
+{
+	"name": "ruphp/yii2-uikit3",
+	"description": "Uikit 3 for Yii2",
+	"keywords": ["yii2", "uikit", "widgets"],
+	"type": "yii2-extension",
+	"license": "MIT",
+	"support": {
+		"source": "https://github.com/ruphp/yii2-uikit3",
+        "issues": "https://github.com/ruphp/yii2-uikit3/issues"
+	},
+	"authors": [
+        {
+            "name": "Aleksandr Smirnov",
+            "homepage" : "https://github.com/ruphp"
+        }
+	],
+	"require": {
+        "yiisoft/yii2": ">=2.0.6"
+    },
+	"autoload": {
+		"psr-4": {
+            "ruphp\\uikit\\": ""
+        }
+	}
+}

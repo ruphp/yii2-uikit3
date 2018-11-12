@@ -1,6 +1,6 @@
 <?php
 
-namespace ruphp\uikit;
+namespace ruphp\yii2_uikit3;
 
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
@@ -47,7 +47,7 @@ class ActiveField extends \yii\widgets\ActiveField
         $script = "$('body').on('change','$related_id',function(){ $.post('$url',{name:$('$related_id').val()},function(data){ if ($('$alias_id').val()) { UIkit.modal.confirm('Replace alias? '+data.alias, function(){ $('$alias_id').val(data.alias) }); } else $('$alias_id').val(data.alias)} )});";
 
         $view->registerJs($script,$view::POS_READY);
-        \ruphp\uikit\assets\Notify::register($view);
+        \ruphp\yii2_uikit3\assets\Notify::register($view);
 
         $options = array_merge($this->inputOptions, $options);
         $this->adjustLabelFor($options);

@@ -1,5 +1,5 @@
 <?php
-namespace ruphp\uikit;
+namespace ruphp\yii2_uikit3;
 use yii\helpers\Html;
 use Yii;
 /**
@@ -10,8 +10,8 @@ use Yii;
  * or [[\yii\widgets\Menu]] to build up such content. For example,
  *
  * ```php
- * use yii\uikit\NavBar;
- * use yii\uikit\Nav;
+ * use yii\yii2_uikit3\NavBar;
+ * use yii\yii2_uikit3\Nav;
  *
  * NavBar::begin();
  * echo Nav::widget([

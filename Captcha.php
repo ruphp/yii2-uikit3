@@ -1,6 +1,6 @@
 <?php
 
-namespace ruphp\uikit;
+namespace ruphp\yii2_uikit3;
 
 class Captcha extends \yii\captcha\Captcha
 {

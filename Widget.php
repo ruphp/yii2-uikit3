@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace ruphp\uikit;
+namespace ruphp\yii2_uikit3;
 
 use Yii;
 use yii\helpers\Json;

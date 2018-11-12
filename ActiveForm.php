@@ -4,7 +4,7 @@
  * @copyright Copyright (c) 2008 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
-namespace ruphp\uikit;
+namespace ruphp\yii2_uikit3;
 
 use Yii;
 use yii\helpers\Html;
@@ -15,7 +15,7 @@ use yii\widgets\ActiveFormAsset;
 class ActiveForm extends \yii\widgets\ActiveForm
 {
 
-    public $fieldClass = 'ruphp\uikit\ActiveField';
+    public $fieldClass = 'ruphp\yii2_uikit3\ActiveField';
     /**
      * @var string the form layout. Either 'default', 'horizontal' or 'stacked'.
      */

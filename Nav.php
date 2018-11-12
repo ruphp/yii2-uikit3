@@ -1,5 +1,5 @@
 <?php
-namespace ruphp\uikit;
+namespace ruphp\yii2_uikit3;
 
 use Yii;
 use yii\base\InvalidConfigException;

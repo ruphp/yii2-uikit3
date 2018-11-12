@@ -1,6 +1,6 @@
 <?php
 
-namespace ruphp\uikit\web;
+namespace ruphp\yii2_uikit3\web;
 
 use Yii;
 use yii\base\Action;
@@ -12,7 +12,7 @@ use yii\helpers\Inflector;
  * public function actions()
  * {
  *     return [
- *         'error' => ['class' => 'ruphp\uikit\web\AliasAction'],
+ *         'error' => ['class' => 'ruphp\yii2_uikit3\web\AliasAction'],
  *     ];
  * }
  * ```

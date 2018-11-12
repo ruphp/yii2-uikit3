@@ -1,6 +1,6 @@
 <?php
 
-namespace ruphp\uikit\widgets;
+namespace ruphp\yii2_uikit3\widgets;
 
 use yii\helpers\Html;
 

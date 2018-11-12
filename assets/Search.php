@@ -1,18 +1,18 @@
 <?php
 
-namespace ruphp\uikit\assets;
+namespace ruphp\yii2_uikit3\assets;
 
 use yii\web\AssetBundle;
 
 class Search extends AssetBundle
 {
-    public $sourcePath = '@ruphp/uikit/uikit';
+    public $sourcePath = '@ruphp/yii2_uikit3/uikit';
 
     public $css = [];
 
     public $js = [];
 
     public $depends = [
-        'ruphp\uikit\assets\Autocomplete',
+        'ruphp\yii2_uikit3\assets\Autocomplete',
     ];
 }

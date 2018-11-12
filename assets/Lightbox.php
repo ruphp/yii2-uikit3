@@ -1,18 +1,18 @@
 <?php
 
-namespace ruphp\uikit\assets;
+namespace ruphp\yii2_uikit3\assets;
 
 use yii\web\AssetBundle;
 
 class Lightbox extends AssetBundle
 {
-    public $sourcePath = '@ruphp/uikit/uikit';
+    public $sourcePath = '@ruphp/yii2_uikit3/uikit';
 
     public $css = [];
 
     public $js = [];
 
     public $depends = [
-        'ruphp\uikit\UikitAsset',
+        'ruphp\yii2_uikit3\UikitAsset',
     ];
 }

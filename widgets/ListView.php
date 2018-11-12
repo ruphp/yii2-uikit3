@@ -1,10 +1,10 @@
 <?php
 
-namespace ruphp\uikit\widgets;
+namespace ruphp\yii2_uikit3\widgets;
 
 class ListView extends \yii\widgets\ListView
 {
 
-	public $pager =  ['class'=> 'ruphp\uikit\widgets\LinkPager'];
+	public $pager =  ['class'=> 'ruphp\yii2_uikit3\widgets\LinkPager'];
 
 }

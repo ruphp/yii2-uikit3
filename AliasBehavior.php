@@ -1,6 +1,6 @@
 <?php
 
-namespace ruphp\uikit;
+namespace ruphp\yii2_uikit3;
 
 class AliasBehavior extends \yii\behaviors\SluggableBehavior
 {

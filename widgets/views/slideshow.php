@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 
-\ruphp\uikit\assets\Slideshow::register($this);
+\ruphp\yii2_uikit3\assets\Slideshow::register($this);
 
 $params = [];
 

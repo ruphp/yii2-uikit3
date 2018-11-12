@@ -1,12 +1,12 @@
 {
-	"name": "ruphp/yii2-uikit3",
+	"name": "ruphp/yii2_uikit3",
 	"description": "Uikit 3 for Yii2",
 	"keywords": ["yii2", "uikit3", "widgets"],
 	"type": "yii2-extension",
 	"license": "MIT",
 	"support": {
-		"source": "https://github.com/ruphp/yii2-uikit3",
-        "issues": "https://github.com/ruphp/yii2-uikit3/issues"
+		"source": "https://github.com/ruphp/yii2_uikit3",
+        "issues": "https://github.com/ruphp/yii2_uikit3/issues"
 	},
 	"authors": [
         {
@@ -21,7 +21,7 @@
 	"minimum-stability": "dev",
 	"autoload": {
 		"psr-4": {
-            "ruphp\\uikit\\": ""
+            "ruphp\\yii2_uikit3\\": ""
         }
 	}
 }

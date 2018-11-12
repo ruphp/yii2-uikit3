@@ -12,7 +12,7 @@ php composer.phar require --prefer-dist ruphp/yii2-uikit3
 or add
 
 ```
-composer require "ruphp/yii2-uikit3:*"
+composer require "ruphp/yii2_uikit3:*"
 ```
 to the require section of your `composer.json` file.
 
@@ -23,16 +23,16 @@ Usage exaple:
 For example, including main UiKit css & js files in any view files
 
 ```php
-\ruphp\uikit\UikitAsset::register($this);
+\ruphp\yii2_uikit3\UikitAsset::register($this);
 ```
 Uikit Slideshow widget examples:
  * render slideshow from webroot path with images
 ```php
-<?= \ruphp\uikit\widgets\Slideshow::widget(['path' => '/images/somefolder/']) ?>
+<?= \ruphp\yii2_uikit3\widgets\Slideshow::widget(['path' => '/images/somefolder/']) ?>
 ```
  * render slideshow with custom slides
 ```php
-<?= \ruphp\uikit\widgets\Slideshow::widget(['slides' => [
+<?= \ruphp\yii2_uikit3\widgets\Slideshow::widget(['slides' => [
 		'<div class="slide">Any content with some <a href="#">button</a> e.g.</div>'
 		'<div class="pam_pam_slide-two">Another content with some <a href="#">button</a> e.g.</div>'
 	]

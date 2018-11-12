@@ -5633,7 +5633,7 @@ ul.uk-nav-sub {
   content: '.';
 }
 :root {
-  --uk-leader-fill-content: .;
+  --uk-leader-fill-content: '.';
 }
 /* ========================================================================
    Component: Iconnav

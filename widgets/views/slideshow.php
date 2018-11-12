@@ -4,36 +4,32 @@ use yii\helpers\Html;
 
 \ruphp\yii2_uikit3\assets\Slideshow::register($this);
 
-$params = [];
-
-if ($this->context->height !== null) {
-	$params['height'] = $this->context->height;
-}
-
-$params = \yii\helpers\Json::encode($params);
+	$ukSlideshow = $this->context->ukSlideshow;
 
 ?>
-<div class="uk-slidenav-position" data-uk-slideshow='<?=$params?>' data-uk-check-display>
-    <ul class="uk-slideshow">
-	<?php foreach ($items as $key => $item): ?>
-		<li>
-			<?php if (!empty($item['img'])): ?>
-				<?=Html::img($item['img'])?>
-			<?php endif ?>
-			<?php if (!empty($item['overlay'])): ?>
-				<div class="uk-overlay-panel uk-overlay-background uk-overlay-fade"><?=$item['overlay']?></div>
-			<?php endif ?>
-			<?php if (!empty($item['item'])): ?>
-				<div class="uk-panel"><?=$item['item']?></div>
-			<?php endif ?>
-		</li>
-	<?php endforeach ?>
-    </ul>
-    <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
-    <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
-    <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center">
-	    <?php foreach ($items as $key => $item): ?>
-			<li data-uk-slideshow-item="<?=$key?>"><a href=""></a></li>
-		<?php endforeach ?>
-    </ul>
+<div uk-slideshow='<?=$ukSlideshow?>'>
+
+    <div class="uk-position-relative uk-visible-toggle uk-light">
+
+        <ul class="uk-slideshow-items">
+            <?php foreach ($items as $key => $item): ?>
+                <li>
+                    <?php if (!empty($item['img'])): ?>
+                        <?=Html::img($item['img'],['uk-cover'=> ''])?>
+                    <?php endif ?>
+                    <?php if (!empty($item['overlay'])): ?>
+                        <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade"><?=$item['overlay']?></div>
+                    <?php endif ?>
+                    <?php if (!empty($item['item'])): ?>
+                        <div class="uk-panel"><?=$item['item']?></div>
+                    <?php endif ?>
+                </li>
+            <?php endforeach ?>
+        </ul>
+
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+    </div>
+    <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
 </div>

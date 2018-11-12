@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * файл - параметры для слайдшоу
+ */
 namespace ruphp\yii2_uikit3\widgets;
 
 use Yii;
@@ -9,12 +11,10 @@ use yii\helpers\FileHelper;
 
 class Slideshow extends Widget
 {
-
     public $path;
     public $images = [];
-    public $slides = [];
-    public $height;
     public $items = [];
+    public $ukSlideshow ;
 
     /*  item => [
             'img'=>'/img.jpg', from @webroot
@@ -24,7 +24,7 @@ class Slideshow extends Widget
 
     public function init()
     {
-        if ($this->path !== null) {
+        if ($this->path !== null) {// для папки с картинками
             $webroot = Yii::getAlias('@webroot');
 
             $dir = $webroot.DIRECTORY_SEPARATOR.ltrim($this->path,DIRECTORY_SEPARATOR);
@@ -37,18 +37,11 @@ class Slideshow extends Widget
             }
         }
 
-        if (count($this->images)) {
+        if (count($this->images)) {// для массива картинок
             foreach ($this->images as $image) {
                 $this->items[] = ['img'=>$image];
             }
         }
-
-        if (count($this->slides)) {
-            foreach ($this->slides as $slide) {
-                $this->items[] = ['item'=>$slide];
-            }
-        }
-
         parent::init();
     }
 

@@ -1,4 +1,4 @@
-# yii2_uikit3 extensions for Yii2
+# yii2-uikit3 extensions for Yii2
 Widgets & assets for a lightweight and modular front-end framework [UiKit](http://getuikit.com/) 
 
 Installation of Yii2 Uikit3 Extension
@@ -33,14 +33,14 @@ Uikit Slideshow widget examples:
  * render slideshow with custom slides
 ```php
 <?= \ruphp\yii2_uikit3\widgets\Slideshow::widget(['slides' => [
-		'<div class="slide">Any content with some <a href="#">button</a> e.g.</div>
+		'<div class="slide">Any content with some <a href="#">button</a> e.g.</div>'
 		'<div class="pam_pam_slide-two">Another content with some <a href="#">button</a> e.g.</div>'
 	]
 ]); ?>
 ```
  * render slideshow with overlays 
 ```php
-<?= \ruphp\yii2_uikit3\widgets\Slideshow::widget(['items' => [
+<?= \ruphp\uikit\widgets\Slideshow::widget(['items' => [
 		['img'=>'/link/to/img.jpg','overlay'=>'Any content with some <a href="#">button</a> e.g.'],
 		['img'=>'/link/to/img.jpg','overlay'=>'Any content with some <a href="#">button</a> e.g.'],
 	]

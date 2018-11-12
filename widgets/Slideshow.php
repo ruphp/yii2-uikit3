@@ -15,6 +15,7 @@ class Slideshow extends Widget
     public $images = [];
     public $items = [];
     public $ukSlideshow ;
+    public $downLi = 0 ;// нижние точки
 
     /*  item => [
             'img'=>'/img.jpg', from @webroot

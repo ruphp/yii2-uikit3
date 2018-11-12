@@ -7,7 +7,7 @@ Installation of Yii2 Uikit3 Extension
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/). Just run
 
 ```
-php composer.phar require --prefer-dist ruphp/yii2-uikit3
+php composer.phar require --prefer-dist ruphp/yii2_uikit3
 ```
 or add
 

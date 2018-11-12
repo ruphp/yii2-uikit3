@@ -25,7 +25,7 @@ use Yii;
  * ```
  *
  * @see http://www.getuikit.com/docs/navbar.html
- * @author Nikolay Kostyurin <nikolay@artkost.ru>
+ * @author Aleksandr Smirnov <dev@wmapps.ru>
  * @since 2.0
  */
 class NavBar extends Widget
@@ -39,6 +39,7 @@ class NavBar extends Widget
 
     /**
      * Initializes the widget.
+     *
      */
     public function init()
     {

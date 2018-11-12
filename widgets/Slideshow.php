@@ -2,6 +2,7 @@
 /**
  * файл - параметры для слайдшоу
  */
+
 namespace ruphp\yii2_uikit3\widgets;
 
 use Yii;
@@ -16,7 +17,6 @@ class Slideshow extends Widget
     public $items = [];
     public $ukSlideshow ;
     public $downLi = 0 ;// нижние точки
-
     /*  item => [
             'img'=>'/img.jpg', from @webroot
             'overlay'=>'',

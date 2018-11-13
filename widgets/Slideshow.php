@@ -17,6 +17,7 @@ class Slideshow extends Widget
     public $items = [];
     public $ukSlideshow ;
     public $downLi = 0 ;// нижние точки
+    public $classDiv = 'uk-position-relative uk-visible-toggle';// класс обертки по умолчанию
     /*  item => [
             'img'=>'/img.jpg', from @webroot
             'overlay'=>'',

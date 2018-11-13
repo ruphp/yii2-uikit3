@@ -6,20 +6,23 @@ use yii\helpers\Html;
 
 	$ukSlideshow = $this->context->ukSlideshow;
 	$downLi = $this->context->downLi;
+    $classDiv = $this->context->classDiv;
+
 
 ?>
 <div uk-slideshow='<?=$ukSlideshow?>'>
 
-    <div class="uk-position-relative uk-visible-toggle uk-light">
+    <div class="<?= $classDiv ?>">
 
         <ul class="uk-slideshow-items">
             <?php foreach ($items as $key => $item): ?>
+            <?php $classOver = !empty($item['classOver']) ? $item['classOver'] : 'uk-position-bottom uk-position-medium uk-text-center uk-light' ?>
                 <li>
                     <?php if (!empty($item['img'])): ?>
                         <?php echo Html::img($item['img'],['uk-cover'=> ''])?>
                     <?php endif ?>
                     <?php if (!empty($item['overlay'])): ?>
-                        <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade"><?php echo $item['overlay']?></div>
+                        <div class="<?= $classOver ?>"><?= $item['overlay']?></div>
                     <?php endif ?>
                     <?php if (!empty($item['item'])): ?>
                         <div class="uk-panel"><?=$item['item']?></div>

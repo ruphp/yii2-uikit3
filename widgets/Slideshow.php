@@ -12,7 +12,7 @@ use yii\helpers\FileHelper;
 
 class Slideshow extends Widget
 {
-    public $path;
+    public $path ;
     public $images = [];
     public $items = [];
     public $ukSlideshow ;

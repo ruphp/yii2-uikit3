@@ -1,8 +1,9 @@
 <?php
 namespace ruphp\yii2_uikit3;
 
-use yii\helpers\Html;
 use Yii;
+use yii\helpers\Html;
+
 /**
  * NavBar renders a navbar HTML component.
  *
@@ -31,11 +32,12 @@ use Yii;
 class NavBar extends Widget
 {
 
-    public $brandLabel = false;
-    public $brandUrl = false;
-    public $container = false;
-    public $brandOptions = [];
-    public $offcanvas = false;
+    public $brandLabel = "44";//содержимое логотипа
+    public $brandUrl = "/";// ссылка логотипа
+    public $container = true;//?
+    public $brandOptions = [];//?
+    public $offcanvas;// вкл или нет меню для мобилок
+    public $offcanvasTextMenu;// текст возле иконки меню
 
     /**
      * Initializes the widget.
@@ -45,22 +47,27 @@ class NavBar extends Widget
     {
         parent::init();
         $this->clientOptions = false;
+
         Html::addCssClass($this->options, 'uk-navbar-container');
 
-        if (empty($this->options['role'])) {
-            $this->options['role'] = 'navigation';
-        }
+        $this->options['uk-navbar'] = '';
+
         echo Html::beginTag('nav', $this->options);
 
         if ($this->container) {
-            echo Html::beginTag('div', ['class'=>'uk-container uk-container-center']);
+            echo Html::beginTag('div', ['class' => 'uk-navbar-left']);
         }
 
         echo Html::beginTag('div', ['class' => 'uk-navbar-left']);
 
-        if ($this->offcanvas) {
-            echo Html::a('','#'.($this->offcanvas === true ? 'offcanvas' : $this->offcanvas),
-                ['class'=>'uk-navbar-toggle uk-visible-small','data-uk-offcanvas'=>true]);
+        if (!empty($this->offcanvas)) {
+
+            echo Html::beginTag('a', ['class' => 'uk-navbar-toggle uk-hidden@m', 'href' => '#','uk-toggle' => 'target: #offcanvas']);
+            echo Html::tag('span', '', ['uk-navbar-toggle-icon' => '']);
+            if (!empty($this->offcanvasTextMenu)) {
+                echo Html::tag('span', $this->offcanvasTextMenu, ['class' => 'uk-margin-small-left']);
+            }
+            echo Html::endTag('a');
         }
 
         if ($this->brandLabel !== false) {

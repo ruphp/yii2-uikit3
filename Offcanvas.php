@@ -79,7 +79,6 @@ class Offcanvas extends Widget
         else {
             return Html::tag('ul', implode("\n", $items), $this->options);
         }
-        
     }
     /**
      * Renders a widget's item.

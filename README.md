@@ -49,3 +49,4 @@ composer require "ruphp/yii2_uikit3:*"
                 ]
                 ]); ?>
 ```
+Остальные инструкции смотрите на сайте [Yii2.Wmapps.ru](https://yii2.wmapps.ru/uikit)

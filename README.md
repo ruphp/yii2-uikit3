@@ -16,7 +16,7 @@ php composer.phar require --prefer-dist ruphp/yii2_uikit3
 ```
 composer require "ruphp/yii2_uikit3:*"
 ```
-Подключение основных файлов css & js фреймворка UiKit3
+Подключение основных файлов css и js фреймворка UiKit3
 -------------
 
 ```php

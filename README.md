@@ -26,7 +26,6 @@ composer require "ruphp/yii2_uikit3:*"
 Примеры использования Slideshow:
 ----------
 
-
 Подключение файла Slideshow.php
 
 ```php

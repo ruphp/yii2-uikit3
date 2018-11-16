@@ -30,6 +30,8 @@ class Offcanvas extends Widget
 
     public $navClass = 'uk-navbar-nav';
 
+    public $idOffcanvas = 'offcanvas';
+
     /**
      * Initializes the widget.
      */
@@ -50,7 +52,7 @@ class Offcanvas extends Widget
      */
     public function run()
     {
-        echo Html::beginTag('div', ['id'=>'offcanvas','uk-offcanvas' => 'overlay: true']);
+        echo Html::beginTag('div', ['id'=>$this->idOffcanvas,'uk-offcanvas' => 'overlay: true']);
         echo Html::beginTag('div', ['class'=>'uk-offcanvas-bar']);
         echo $this->renderItems();
         if ($this->accordion) {

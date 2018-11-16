@@ -22,13 +22,13 @@ class Nav extends Widget
 
     public $accordion = false;
 
-    public $navbar = false;
+   //public $navbar = false;
 
     public $containerTag = 'div';
 
     public $containerOptions = [];
 
-    public $navClass = 'uk-navbar-nav';
+    public $navClass = 'uk-navbar-nav uk-visible@m'; // класс блока с меню
 
     /**
      * Initializes the widget.
@@ -42,7 +42,9 @@ class Nav extends Widget
         if ($this->params === null) {
             $this->params = $_GET;
         }
-        Html::addCssClass($this->options, $this->navbar ? 'uk-navbar-nav' : $this->navClass);
+        //Html::addCssClass($this->options, $this->navbar ? 'uk-navbar-nav' : $this->navClass);
+        Html::addCssClass($this->options,  $this->navClass);
+
         if ($this->accordion) {
             $this->options['data-uk-nav'] = $this->jsonClientOptions();
         }

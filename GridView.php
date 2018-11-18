@@ -1,6 +1,6 @@
 <?php
 
-namespace ruwmapps\yii2_uikit3\widgets;
+namespace ruwmapps\yii2_uikit3;
 
 class GridView extends \yii\grid\GridView
 {

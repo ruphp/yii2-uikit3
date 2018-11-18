@@ -1,6 +1,6 @@
 <?php
 
-namespace ruwmapps\yii2_uikit3\widgets;
+namespace ruwmapps\yii2_uikit3;
 
 use Yii;
 use yii\helpers\Html;

@@ -7,27 +7,8 @@ use yii\helpers\Html;
 
 /**
  * NavBar renders a navbar HTML component.
- *
- * Any content enclosed between the [[begin()]] and [[end()]] calls of NavBar
- * is treated as the content of the navbar. You may use widgets such as [[Nav]]
- * or [[\yii\widgets\Menu]] to build up such content. For example,
- *
- * ```php
- * use yii\yii2_uikit3\NavBar;
- * use yii\yii2_uikit3\Nav;
- *
- * NavBar::begin();
- * echo Nav::widget([
- *     'items' => [
- *         ['label' => 'Home', 'url' => ['/site/index']],
- *         ['label' => 'About', 'url' => ['/site/about']],
- *     ],
- * ]);
- * NavBar::end();
- * ```
- *
  * @see http://www.getuikit.com/docs/navbar.html
- * @author Aleksandr Smirnov <dev@ruwmapps.ru>
+ * @author Aleksandr Smirnov <dev@wmapps.ru>
  * @since 2.0
  */
 class NavBar extends Widget
@@ -36,8 +17,8 @@ class NavBar extends Widget
     public $brandLabel = false;//содержимое логотипа
     public $brandUrl = false;// ссылка логотипа
     public $classLinkLogo = 'uk-navbar-item uk-logo';// класс ссылки логотипа
-    public $offcanvas;// вкл или нет offcanvas
-    public $offcanvasTextMenu;// текст возле иконки меню
+    public $offcanvas = 0;// вкл или нет offcanvas
+    public $offcanvasTextMenu = 'menu';// текст возле иконки меню
     public $classOffcanvasLink = 'uk-navbar-toggle uk-navbar-right uk-hidden@m';// класс сылки на офканвас
     public $classNavBar = 'uk-navbar-center';// класс меню определяющий расположение в блоке
     public $idOffcanvas = 'offcanvas';// ид блока offcanvas который надо раскрывать
@@ -63,7 +44,7 @@ class NavBar extends Widget
     public function run()
     {
         echo Html::endTag('div');
-        if (!empty($this->offcanvas)) {
+        if ($this->offcanvas!=0) {
 
             echo Html::beginTag('a', ['class' => $this->classOffcanvasLink, 'href' => '#', 'uk-toggle' => 'target:#'.$this->idOffcanvas]);
             if (!empty($this->offcanvasTextMenu)) {

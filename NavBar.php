@@ -33,14 +33,14 @@ use yii\helpers\Html;
 class NavBar extends Widget
 {
 
-    public $brandLabel ;//содержимое логотипа
-    public $brandUrl ;// ссылка логотипа
-    public $brandOptions;//опции ссылки логотипа
-    public $offcanvas;// вкл или нет меню для мобилок
+    public $brandLabel = false;//содержимое логотипа
+    public $brandUrl = false;// ссылка логотипа
+    public $classLinkLogo = 'uk-navbar-item uk-logo';// класс ссылки логотипа
+    public $offcanvas;// вкл или нет offcanvas
     public $offcanvasTextMenu;// текст возле иконки меню
     public $classOffcanvasLink = 'uk-navbar-toggle uk-navbar-right uk-hidden@m';// класс сылки на офканвас
     public $classNavBar = 'uk-navbar-center';// класс меню определяющий расположение в блоке
-    public $idOffcanvas = 'offcanvas';// класс меню определяющий расположение в блоке
+    public $idOffcanvas = 'offcanvas';// ид блока offcanvas который надо раскрывать
 
 
     public function init()
@@ -53,8 +53,8 @@ class NavBar extends Widget
         echo Html::beginTag('nav', $this->options);
 
         if ($this->brandLabel !== false) {
-            Html::addCssClass($this->brandOptions, ['widget' => 'uk-navbar-item uk-logo']);
-            echo Html::a($this->brandLabel, $this->brandUrl === false ? Yii::$app->homeUrl : $this->brandUrl, $this->brandOptions);
+
+            echo Html::a($this->brandLabel, $this->brandUrl === false ? Yii::$app->homeUrl : $this->brandUrl, ['class'=>$this->classLinkLogo]);
         }
         echo Html::beginTag('div', ['class' => $this->classNavBar]);
 

@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 
-\wm-apps\yii2_uikit3\assets\Slideshow::register($this);
+\ruwmapps\yii2_uikit3\assets\Slideshow::register($this);
 
 	$ukSlideshow = $this->context->ukSlideshow;
 	$downLi = $this->context->downLi;

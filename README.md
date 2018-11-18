@@ -1,7 +1,7 @@
 # yii2-uikit3 Расширение для Yii2
 Виджет и стили от фреймворка [UiKit3](http://getuikit.com/) 
 
-Демо и подробные инструкции смотрите на сайте [Yii2.Wmapps.ru](https://yii2.wmapps.ru/uikit)
+Демо и подробные инструкции смотрите на сайте [Yii2.ruwmapps.ru](https://yii2.ruwmapps.ru/uikit)
 
 Установка 
 ------------------------------------
@@ -9,18 +9,18 @@
 Установка через [composer](http://getcomposer.org/download/). Выполнить команду
 
 ```
-php composer.phar require --prefer-dist wm-apps/yii2_uikit3
+php composer.phar require --prefer-dist ruwmapps/yii2_uikit3
 ```
 или
 
 ```
-composer require "wm-apps/yii2_uikit3:*"
+composer require "ruwmapps/yii2_uikit3:*"
 ```
 Подключение основных файлов css и js фреймворка UiKit3
 -------------
 
 ```php
-\wm-apps\yii2_uikit3\UikitAsset::register($this);
+\ruwmapps\yii2_uikit3\UikitAsset::register($this);
 ```
 
 Примеры использования Slideshow:
@@ -29,7 +29,7 @@ composer require "wm-apps/yii2_uikit3:*"
 Подключение файла Slideshow.php
 
 ```php
-<? use wm-apps\yii2_uikit3\widgets\Slideshow; ?>
+<? use ruwmapps\yii2_uikit3\widgets\Slideshow; ?>
 ```
 Пример Uikit3 Slideshow без оверлея 2мя способами:
  * указания полного пути к папке с картинками
@@ -49,4 +49,4 @@ composer require "wm-apps/yii2_uikit3:*"
                 ]
                 ]); ?>
 ```
-Остальные инструкции смотрите на сайте [Yii2.Wmapps.ru](https://yii2.wmapps.ru/uikit)
+Остальные инструкции смотрите на сайте [Yii2.ruwmapps.ru](https://yii2.ruwmapps.ru/uikit)

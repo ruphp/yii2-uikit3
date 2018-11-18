@@ -3,7 +3,7 @@
  * файл - параметры для слайдшоу
  */
 
-namespace wm-apps\yii2_uikit3\widgets;
+namespace ruwmapps\yii2_uikit3\widgets;
 
 use Yii;
 use yii\base\Widget;
@@ -18,11 +18,6 @@ class Slideshow extends Widget
     public $ukSlideshow ;
     public $downLi = 0 ;// нижние точки
     public $classDiv = 'uk-position-relative uk-visible-toggle';// класс обертки по умолчанию
-    /*  item => [
-            'img'=>'/img.jpg', from @webroot
-            'overlay'=>'',
-            'item'=>'',
-        ]   */
 
     public function init()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace wm-apps\yii2_uikit3\web;
+namespace ruwmapps\yii2_uikit3\web;
 
 use Yii;
 use yii\base\Action;
@@ -12,7 +12,7 @@ use yii\helpers\Inflector;
  * public function actions()
  * {
  *     return [
- *         'error' => ['class' => 'wm-apps\yii2_uikit3\web\AliasAction'],
+ *         'error' => ['class' => 'ruwmapps\yii2_uikit3\web\AliasAction'],
  *     ];
  * }
  * ```

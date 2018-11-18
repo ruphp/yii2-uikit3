@@ -1,17 +1,17 @@
 {
-	"name": "wm-apps/yii2_uikit3",
+	"name": "ruwmapps/yii2_uikit3",
 	"description": "Uikit 3 for Yii2",
 	"keywords": ["yii2", "uikit3", "widgets"],
 	"type": "yii2-extension",
 	"license": "MIT",
 	"support": {
-		"source": "https://github.com/wm-apps/yii2_uikit3",
-        "issues": "https://github.com/wm-apps/yii2_uikit3/issues"
+		"source": "https://github.com/ruwmapps/yii2_uikit3",
+        "issues": "https://github.com/ruwmapps/yii2_uikit3/issues"
 	},
 	"authors": [
         {
             "name": "Aleksandr Smirnov",
-            "homepage" : "https://github.com/wm-apps"
+            "homepage" : "https://github.com/ruwmapps"
 
         }
 	],
@@ -21,7 +21,7 @@
 	"minimum-stability": "dev",
 	"autoload": {
 		"psr-4": {
-            "wm-apps\\yii2_uikit3\\": ""
+            "ruwmapps\\yii2_uikit3\\": ""
         }
 	}
 }

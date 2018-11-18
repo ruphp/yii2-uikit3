@@ -1,6 +1,6 @@
 <?php
 
-namespace wm-apps\yii2_uikit3;
+namespace ruwmapps\yii2_uikit3;
 
 use Yii;
 use yii\helpers\Html;
@@ -27,7 +27,7 @@ use yii\helpers\Html;
  * ```
  *
  * @see http://www.getuikit.com/docs/navbar.html
- * @author Aleksandr Smirnov <dev@wmapps.ru>
+ * @author Aleksandr Smirnov <dev@ruwmapps.ru>
  * @since 2.0
  */
 class NavBar extends Widget

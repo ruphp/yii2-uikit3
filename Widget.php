@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace wm-apps\yii2_uikit3;
+namespace ruwmapps\yii2_uikit3;
 
 use Yii;
 use yii\helpers\Json;

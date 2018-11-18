@@ -1,5 +1,5 @@
 <?php
-namespace wm-apps\yii2_uikit3;
+namespace ruwmapps\yii2_uikit3;
 
 use Yii;
 use yii\base\InvalidConfigException;
@@ -44,8 +44,6 @@ class Offcanvas extends Widget
         if ($this->params === null) {
             $this->params = $_GET;
         }
-       // Html::addCssClass($this->options,'' );
-
     }
     /**
      * Renders the widget.

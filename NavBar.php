@@ -1,6 +1,6 @@
 <?php
 
-namespace ruphp\yii2_uikit3;
+namespace wm-apps\yii2_uikit3;
 
 use Yii;
 use yii\helpers\Html;

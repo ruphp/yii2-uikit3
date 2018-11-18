@@ -1,13 +1,13 @@
 <?php
 
-namespace ruphp\yii2_uikit3;
+namespace wm-apps\yii2_uikit3;
 
 use yii\web\AssetBundle;
 
 
 class UikitAsset extends AssetBundle
 {
-    public $sourcePath = '@ruphp/yii2_uikit3/uikit';
+    public $sourcePath = '@wm-apps/yii2_uikit3/uikit';
 
     public $css = [
         'css/uikit.min.css',

@@ -2,8 +2,8 @@
 
 use yii\helpers\Html;
 
-\ruphp\yii2_uikit3\assets\Slideset::register($this);
-\ruphp\yii2_uikit3\assets\Lightbox::register($this);
+\wm-apps\yii2_uikit3\assets\Slideset::register($this);
+\wm-apps\yii2_uikit3\assets\Lightbox::register($this);
 
 $id = uniqid();
 

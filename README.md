@@ -9,18 +9,18 @@
 Установка через [composer](http://getcomposer.org/download/). Выполнить команду
 
 ```
-php composer.phar require --prefer-dist ruphp/yii2_uikit3
+php composer.phar require --prefer-dist wm-apps/yii2_uikit3
 ```
 или
 
 ```
-composer require "ruphp/yii2_uikit3:*"
+composer require "wm-apps/yii2_uikit3:*"
 ```
 Подключение основных файлов css и js фреймворка UiKit3
 -------------
 
 ```php
-\ruphp\yii2_uikit3\UikitAsset::register($this);
+\wm-apps\yii2_uikit3\UikitAsset::register($this);
 ```
 
 Примеры использования Slideshow:
@@ -29,7 +29,7 @@ composer require "ruphp/yii2_uikit3:*"
 Подключение файла Slideshow.php
 
 ```php
-<? use ruphp\yii2_uikit3\widgets\Slideshow; ?>
+<? use wm-apps\yii2_uikit3\widgets\Slideshow; ?>
 ```
 Пример Uikit3 Slideshow без оверлея 2мя способами:
  * указания полного пути к папке с картинками

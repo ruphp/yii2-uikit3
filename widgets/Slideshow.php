@@ -3,7 +3,7 @@
  * файл - параметры для слайдшоу
  */
 
-namespace ruphp\yii2_uikit3\widgets;
+namespace wm-apps\yii2_uikit3\widgets;
 
 use Yii;
 use yii\base\Widget;

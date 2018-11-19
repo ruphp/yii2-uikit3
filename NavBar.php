@@ -19,7 +19,7 @@ class NavBar extends Widget
     public $classLinkLogo = 'uk-navbar-item uk-logo';// класс ссылки логотипа
     public $offcanvas = 0;// вкл или нет offcanvas
     public $offcanvasTextMenu = 'menu';// текст возле иконки меню
-    public $classOffcanvasLink = 'uk-navbar-toggle uk-navbar-right uk-hidden@m';// класс сылки на офканвас
+    public $classOffcanvasLink = 'uk-navbar-toggle uk-navbar-right  uk-hidden@m';// класс сылки на офканвас
     public $classNavBar = 'uk-navbar-center  uk-visible@m';// класс меню определяющий расположение в блоке
     public $idOffcanvas = 'offcanvas';// ид блока offcanvas который надо раскрывать
 

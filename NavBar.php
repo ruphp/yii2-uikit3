@@ -20,7 +20,7 @@ class NavBar extends Widget
     public $offcanvas = 0;// вкл или нет offcanvas
     public $offcanvasTextMenu = 'menu';// текст возле иконки меню
     public $classOffcanvasLink = 'uk-navbar-toggle uk-navbar-right uk-hidden@m';// класс сылки на офканвас
-    public $classNavBar = 'uk-navbar-center';// класс меню определяющий расположение в блоке
+    public $classNavBar = 'uk-navbar-center uk-visible@m';// класс меню определяющий расположение в блоке
     public $idOffcanvas = 'offcanvas';// ид блока offcanvas который надо раскрывать
 
 
@@ -34,7 +34,6 @@ class NavBar extends Widget
         echo Html::beginTag('nav', $this->options);
 
         if ($this->brandLabel !== false) {
-
             echo Html::a($this->brandLabel, $this->brandUrl === false ? Yii::$app->homeUrl : $this->brandUrl, ['class'=>$this->classLinkLogo]);
         }
         echo Html::beginTag('div', ['class' => $this->classNavBar]);

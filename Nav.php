@@ -11,25 +11,27 @@ use yii\helpers\Url;
 class Nav extends Widget
 {
 
-    public $items = [];
+    public $items = [];// массив пунктов меню
 
-    public $encodeLabels = false;
+    public $encodeLabels = false; //раскодировать имя меню
 
-    public $activateItems = true;
+    public $activateItems = true; //
 
-    public $route;
+    public $route; //
 
-    public $params;
+    public $params; //
 
     public $accordion = false;
 
-    public $navbar = false;
+    public $navbar = false; // используется ли внутри NavBar
 
-    public $containerTag = 'div';
+    public $containerTag = 'div'; // обертка подменю
 
-    public $containerOptions = []; // не трогать
+    public $containerOptions = []; // не трогать, признак дочернего блока если заполнен
 
-    public $navClass ;// доп класс для дочерней ul
+    public $navClass = 'uk-nav' ;// класс для дочернего ul
+
+    public $navBarClass = 'uk-navbar-nav' ;// класс для родительского ul, при условии использовании внутри navBar
 
     /**
      * Initializes the widget.
@@ -43,7 +45,12 @@ class Nav extends Widget
         if ($this->params === null) {
             $this->params = $_GET;
         }
-        Html::addCssClass($this->options, $this->navbar ? 'uk-navbar-nav' : $this->navClass);
+        if (!count($this->containerOptions)) {
+            //Html::addCssClass($this->options, $this->navbar ? 'uk-navbar-nav uk-subnav uk-subnav-pill' : $this->navClass);
+            Html::addCssClass($this->options, $this->navbar ? $this->navBarClass : $this->navClass);
+            //$this->options['uk-margin'] = '';
+        }
+
         if ($this->accordion) {
             $this->options['data-uk-nav'] = $this->jsonClientOptions();
         }
@@ -117,15 +124,12 @@ class Nav extends Widget
         }
         /// дочерние массивы
         if ($items !== null && is_array($items) && count($items)) {
-            //Html::addCssClass($options, 'uk-parent');
 
             if ($this->navbar) {
-                //$options['data-uk-dropdown'] = "{pos:'bottom'}";
-                //Html::tag($this->containerTag,Html::tag('ul', implode("\n", $items), $this->options),$this->containerOptions);
-                Html::removeCssClass($options, 'uk-navbar-nav');
                 $items = self::widget(['items' => $items,'containerOptions'=>['class'=>'uk-navbar-dropdown'], 'options' => ['class' => 'uk-nav uk-navbar-dropdown-nav']]);
             }
             else {
+                Html::addCssClass($options, 'uk-parent');
                 $items = self::widget(['items' => $items, 'options' => ['class' => 'uk-nav-sub']]);
             }
         }

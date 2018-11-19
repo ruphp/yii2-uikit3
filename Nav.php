@@ -1,6 +1,7 @@
 <?php
 namespace ruwmapps\yii2_uikit3;
 
+
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
@@ -10,10 +11,7 @@ use yii\helpers\Url;
 class Nav extends Widget
 {
 
-    public $items = []; // label, url, linkOptions
-
-    public $containerTag = 'div';
-    public $containerOptions = [];
+    public $items = [];
 
     public $encodeLabels = false;
 
@@ -25,13 +23,13 @@ class Nav extends Widget
 
     public $accordion = false;
 
-     public $navbar = false;
+    public $navbar = false;
 
-     public $ukNavAttr;
+    public $containerTag = 'div';
 
+    public $containerOptions = []; // не трогать
 
-
-    public $navClass = 'uk-navbar-nav uk-visible@m'; // класс блока с меню
+    public $navClass ;// доп класс для дочерней ul
 
     /**
      * Initializes the widget.
@@ -46,10 +44,8 @@ class Nav extends Widget
             $this->params = $_GET;
         }
         Html::addCssClass($this->options, $this->navbar ? 'uk-navbar-nav' : $this->navClass);
-        //Html::addCssClass($this->options,  $this->navClass);
-
         if ($this->accordion) {
-            $this->options['uk-nav'] = $this->ukNavAttr;
+            $this->options['data-uk-nav'] = $this->jsonClientOptions();
         }
     }
     /**
@@ -57,62 +53,34 @@ class Nav extends Widget
      */
     public function run()
     {
-        $it=$this->items;
-
+        echo $this->renderItems();
         if ($this->accordion) {
-           // $pItems = ArrayHelper::getColumn($it, 'arrChilds');
-           // print_r($pItems);
-
-/*            if(count($pItems)) {
-
-                foreach ($pItems as $i => $item) {
-                    $test = $this->registerAsset($item);
-                }
-                echo $this->renderItems($it,$test);
-
-            }*/
-        }else{
-            echo $this->renderItems($it);
+            $this->registerAsset();
         }
     }
     /**
      * Renders widget items.
      */
-    public function renderItems($it)
+    public function renderItems()
     {
         $items = [];
-
-        foreach ($it as $i => $item) {
-            $pItems = [];
-            if (ArrayHelper::keyExists('arrChilds', $item, false)){
-                $pItems = ArrayHelper::getValue($item, 'arrChilds');
-            }
-
-            if(count($pItems)) {
-
-              /*  foreach ($pItems as $i => $item) {
-                    $test = $this->registerAsset($item);
-                }*/
-                $items[] = $this->renderItem($item,$pItems);
-
-            }else{
-                $items[] = $this->renderItem($item,0);
-            }
-
-/*            if (isset($item['visible']) && !$item['visible']) {
+        foreach ($this->items as $i => $item) {
+            if (isset($item['visible']) && !$item['visible']) {
                 unset($items[$i]);
                 continue;
-            }*/
-
+            }
+            $items[] = $this->renderItem($item);
         }
 
         if (count($this->containerOptions)) {
-            return Html::tag($this->containerTag,Html::tag('ul', implode("\n", $items), $this->options),$this->containerOptions);
+            //return Html::tag('ul', implode("\n", $items), $this->options);
+           return Html::tag($this->containerTag,Html::tag('ul', implode("\n", $items), $this->options),$this->containerOptions);
+
         }
         else {
             return Html::tag('ul', implode("\n", $items), $this->options);
         }
-        
+
     }
     /**
      * Renders a widget's item.
@@ -120,20 +88,25 @@ class Nav extends Widget
      * @return string the rendering result.
      * @throws InvalidConfigException
      */
-    public function renderItem($item,$test)
+    public function renderItem($item)
     {
         if (is_string($item)) {
             return $item;
         }
+        // перебор массива
         if (!isset($item['label'])) {
             throw new InvalidConfigException("The 'label' option is required.");
         }
         $label = $this->encodeLabels ? Html::encode($item['label']) : $item['label'];
         $options = ArrayHelper::getValue($item, 'options', []);
-        $items = ArrayHelper::getValue($item, 'items');        //gh
-        $items=is_array($items)?count($items):null;
+
+        $items = ArrayHelper::getValue($item, 'items');
+        if (!is_array($items)) {
+            $items = null;
+        }
         $url = Url::to(ArrayHelper::getValue($item, 'url', false));
         $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
+        // перебор активных
         if (isset($item['active'])) {
             $active = ArrayHelper::remove($item, 'active', false);
         } else {
@@ -142,27 +115,26 @@ class Nav extends Widget
         if ($active) {
             Html::addCssClass($options, 'uk-active');
         }
+        /// дочерние массивы
         if ($items !== null && is_array($items) && count($items)) {
-            Html::addCssClass($options, 'uk-parent');
+            //Html::addCssClass($options, 'uk-parent');
 
             if ($this->navbar) {
-                $options['data-uk-dropdown'] = "{pos:'bottom'}";
+                //$options['data-uk-dropdown'] = "{pos:'bottom'}";
+                //Html::tag($this->containerTag,Html::tag('ul', implode("\n", $items), $this->options),$this->containerOptions);
+                Html::removeCssClass($options, 'uk-navbar-nav');
                 $items = self::widget(['items' => $items,'containerOptions'=>['class'=>'uk-navbar-dropdown'], 'options' => ['class' => 'uk-nav uk-navbar-dropdown-nav']]);
             }
             else {
                 $items = self::widget(['items' => $items, 'options' => ['class' => 'uk-nav-sub']]);
-            }            
+            }
         }
+        ////
         $link = $label;
         if ($url) {
             $link = Html::a($label, $url, $linkOptions);
         }
-        if(is_array($test)){
-            return Html::tag('li', $link . $this->registerAsset($test) . $items, $options);
-        }else{
-            return Html::tag('li', $link . $items, $options);
-        }
-
+        return Html::tag('li', $link . $items, $options);
     }
     /**
      * Checks whether a menu item is active.
@@ -198,23 +170,4 @@ class Nav extends Widget
         }
         return false;
     }
-    public function registerAsset($pItems)
-    {
-        $items2 = [];
-        if (count($pItems)) {
-
-        foreach ($pItems as $i => $item) {
-            if (isset($item['visible']) && !$item['visible']) {
-                unset($items[$i]);
-                continue;
-            }
-            $items2[] = $this->renderItems($item);
-        }
-
-
-            return Html::tag('div', implode("\n", $items2), ['uk-dropdown'=>'']);
-
-        }
-    }
-
 }

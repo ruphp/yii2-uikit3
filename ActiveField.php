@@ -11,11 +11,13 @@ class ActiveField extends \yii\widgets\ActiveField
 
 	public $labelOptions = ['class' => 'uk-form-label'];
 
-	public $options = ['class' => 'uk-form-row'];
+	public $options = ['class' => 'uk-margin'];
 
 	public $errorOptions = ['class' => 'uk-form-help-block uk-text-danger'];
 
-	public $hintOptions = ['class' => 'uk-form-help-block'];    
+	public $hintOptions = ['class' => 'uk-form-help-block'];
+
+    public $inputOptions = ['class' => 'uk-input'];
 
 	public function begin()
     {
@@ -28,7 +30,6 @@ class ActiveField extends \yii\widgets\ActiveField
 
         return parent::begin();
     }
-
 
     public function checkbox($options = [], $enclosedByLabel = true)
     {

@@ -33,6 +33,8 @@ class ActiveForm extends \yii\widgets\ActiveForm
 
     public $scripts_inform = false;
 
+    public $classForm = 'uk-form';
+
     /**
      * @inheritdoc
      */
@@ -44,7 +46,7 @@ class ActiveForm extends \yii\widgets\ActiveForm
 
 
 
-        Html::addCssClass($this->options, 'uk-form');
+        Html::addCssClass($this->options, $this->classForm );
 
         if ($this->layout !== 'default') {
             Html::addCssClass($this->options, 'uk-form-' . $this->layout);

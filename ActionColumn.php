@@ -42,5 +42,4 @@ class ActionColumn extends \yii\grid\ActionColumn
             };
         }
     }
-
 }

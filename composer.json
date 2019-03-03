@@ -16,7 +16,8 @@
         }
 	],
 	"require": {
-        "yiisoft/yii2": ">=2.0.6"
+        "yiisoft/yii2": ">=2.0.6",
+		"ruwmapps/yii2_uikit3": "*"
     },
 	"minimum-stability": "dev",
 	"autoload": {

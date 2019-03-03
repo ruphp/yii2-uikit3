@@ -53,8 +53,8 @@ class Alert extends \yii\base\Widget
                     foreach ($data as $message) {
                         $this->options['class'] .= ' '.$this->alertTypes[$type];
                         echo Html::beginTag('div',$this->options);
-                        echo Html::a('', $url = null, ['class' => 'uk-alert-close uk-close']);
-                        echo '<p>'.$message.'</p>';
+                        echo Html::a('', $url = null, ['class' => 'uk-alert-close uk-close','uk-icon' => '']);
+                        echo $message;
                         echo Html::endTag('div');
                     }
 
@@ -65,8 +65,8 @@ class Alert extends \yii\base\Widget
         }
         elseif(($message = $session->getFlash($this->type)) !== null) {
             echo Html::beginTag('div',$this->options);
-            echo Html::a('', $url = null, ['class' => 'uk-alert-close uk-close']);
-            echo Html::tag('p',$message);
+            echo Html::a('', $url = null, ['class' => 'uk-alert-close uk-close','uk-icon' => '']);
+            echo $message;
             echo Html::endTag('div');
         }
     }

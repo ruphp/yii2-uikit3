@@ -24,7 +24,6 @@ class NavBar extends Widget
     public $idNavBar = 'navbar';// класс меню определяющий расположение в блоке
     public $idOffcanvas = 'offcanvas';// ид блока offcanvas который надо раскрывать
 
-
     public function init()
     {
         $this->options['id'] = $this->idNavBar;

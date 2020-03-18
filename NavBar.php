@@ -21,11 +21,13 @@ class NavBar extends Widget
     public $offcanvasTextMenu = 'menu';// текст возле иконки меню
     public $classOffcanvasLink = 'uk-navbar-toggle uk-navbar-right  uk-hidden@m';// класс сылки на офканвас
     public $classNavBar = 'uk-navbar-center  uk-visible@m';// класс меню определяющий расположение в блоке
+    public $idNavBar = 'navbar';// класс меню определяющий расположение в блоке
     public $idOffcanvas = 'offcanvas';// ид блока offcanvas который надо раскрывать
 
 
     public function init()
     {
+        $this->options['id'] = $this->idNavBar;
         parent::init();
         $this->clientOptions = false;
 

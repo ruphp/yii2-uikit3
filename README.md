@@ -1,8 +1,6 @@
 # yii2-uikit3 Расширение для Yii2
 Виджет и стили от фреймворка [UiKit3](http://getuikit.com/) 
 
-Демо и подробные инструкции смотрите на сайте [Yii2.wmapps.ru](https://yii2.wmapps.ru/uikit)
-
 Установка 
 ------------------------------------
 
@@ -49,4 +47,4 @@ composer require "ruwmapps/yii2_uikit3:*"
                 ]
                 ]); ?>
 ```
-Остальные инструкции смотрите на сайте [Yii2.wmapps.ru](https://yii2.wmapps.ru/uikit)
+Демо + инструкции [Yii2.wmapps.ru](https://yii2.wmapps.ru/uikit)
